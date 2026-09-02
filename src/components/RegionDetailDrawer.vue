@@ -38,7 +38,17 @@ const notes = computed(() =>
       <!-- Header -->
       <div class="php-drawer-header pa-4">
         <div class="d-flex align-center justify-space-between">
-          <div class="text-overline text-medium-emphasis">
+          <v-btn
+            v-if="store.timelineOpen"
+            variant="text"
+            size="small"
+            prepend-icon="mdi-arrow-left"
+            aria-label="Back to region overview"
+            @click="store.toggleTimeline()"
+          >
+            Back
+          </v-btn>
+          <div v-else class="text-overline text-medium-emphasis">
             {{ store.isClinical ? region.clinicalBlurb : region.system }}
           </div>
           <v-btn
@@ -50,13 +60,13 @@ const notes = computed(() =>
           />
         </div>
         <h2 class="text-h5 font-weight-bold php-patient-headline">
-          {{ region.label }}
+          {{ region.label }}{{ store.timelineOpen ? ' — history' : '' }}
         </h2>
-        <p class="text-body-2 text-medium-emphasis mb-3 mt-1">
+        <p v-if="!store.timelineOpen" class="text-body-2 text-medium-emphasis mb-3 mt-1">
           {{ store.isClinical ? region.clinicalBlurb : region.patientBlurb }}
         </p>
 
-        <div class="d-flex align-center ga-2">
+        <div v-if="!store.timelineOpen" class="d-flex align-center ga-2">
           <v-chip
             v-if="topFlag"
             :color="flagMeta(topFlag)?.color"
@@ -70,69 +80,51 @@ const notes = computed(() =>
             variant="tonal"
             color="secondary"
             size="small"
-            :prepend-icon="store.timelineOpen ? 'mdi-timeline-check' : 'mdi-timeline-outline'"
+            prepend-icon="mdi-timeline-outline"
             @click="store.toggleTimeline()"
           >
-            {{ store.timelineOpen ? 'Hide history' : 'View history' }}
+            View history
           </v-btn>
         </div>
       </div>
 
       <v-divider />
 
-      <!-- Scrollable body -->
+      <!-- Scrollable body: region overview, or timeline when history is open -->
       <div class="php-drawer-scroll pa-4">
-        <ConditionList :region-id="region.id" />
-        <v-divider class="my-4" />
-        <MedicationList :region-id="region.id" />
-        <v-divider class="my-4" />
-        <VitalsLabsSnapshot :region-id="region.id" />
+        <RegionTimeline v-if="store.timelineOpen" :region-id="region.id" />
 
-        <template v-if="notes.length">
+        <template v-else>
+          <ConditionList :region-id="region.id" />
           <v-divider class="my-4" />
-          <div class="d-flex align-center mb-2">
-            <v-icon icon="mdi-message-text-outline" class="me-2" color="secondary" />
-            <span class="text-subtitle-1 font-weight-medium">Care-team notes</span>
-          </div>
-          <v-card
-            v-for="n in notes"
-            :key="n.id"
-            variant="tonal"
-            color="flag-stable"
-            class="mb-2 pa-3"
-          >
-            <p class="text-body-2 mb-2">
-              "{{ store.isClinical ? n.clinicalLabel : n.patientLabel }}"
-            </p>
-            <div class="text-caption text-medium-emphasis">
-              — {{ n.author }}, {{ n.role }} · {{ formatDate(n.date) }}
+          <MedicationList :region-id="region.id" />
+          <v-divider class="my-4" />
+          <VitalsLabsSnapshot :region-id="region.id" />
+
+          <template v-if="notes.length">
+            <v-divider class="my-4" />
+            <div class="d-flex align-center mb-2">
+              <v-icon icon="mdi-message-text-outline" class="me-2" color="secondary" />
+              <span class="text-subtitle-1 font-weight-medium">Care-team notes</span>
             </div>
-          </v-card>
+            <v-card
+              v-for="n in notes"
+              :key="n.id"
+              variant="tonal"
+              color="flag-stable"
+              class="mb-2 pa-3"
+            >
+              <p class="text-body-2 mb-2">
+                "{{ store.isClinical ? n.clinicalLabel : n.patientLabel }}"
+              </p>
+              <div class="text-caption text-medium-emphasis">
+                — {{ n.author }}, {{ n.role }} · {{ formatDate(n.date) }}
+              </div>
+            </v-card>
+          </template>
         </template>
       </div>
     </template>
-
-    <!-- Timeline bottom sheet, off the detail drawer -->
-    <v-bottom-sheet v-model="store.timelineOpen" :scrim="false">
-      <v-card rounded="t-xl">
-        <div class="d-flex align-center justify-space-between px-4 pt-3">
-          <span class="text-subtitle-1 font-weight-medium php-patient-headline">
-            {{ region?.label }} — history
-          </span>
-          <v-btn
-            icon="mdi-close"
-            variant="text"
-            size="small"
-            aria-label="Close history"
-            @click="store.timelineOpen = false"
-          />
-        </div>
-        <v-divider class="mt-2" />
-        <div class="php-timeline-scroll">
-          <RegionTimeline v-if="region" :region-id="region.id" />
-        </div>
-      </v-card>
-    </v-bottom-sheet>
   </v-navigation-drawer>
 </template>
 
@@ -149,10 +141,5 @@ const notes = computed(() =>
 .php-drawer-scroll {
   overflow-y: auto;
   flex: 1 1 auto;
-}
-
-.php-timeline-scroll {
-  max-height: 55vh;
-  overflow-y: auto;
 }
 </style>

@@ -28,6 +28,7 @@ function meta(type) {
       align="start"
       density="comfortable"
       truncate-line="both"
+      class="php-timeline"
     >
       <v-timeline-item
         v-for="e in store.timelineByRegion(regionId)"
@@ -36,16 +37,11 @@ function meta(type) {
         :icon="meta(e.eventType).icon"
         size="small"
       >
-        <template #opposite>
-          <span class="text-caption text-medium-emphasis">
-            {{ formatDate(e.date) }}
-          </span>
-        </template>
+        <div class="text-caption text-medium-emphasis php-timeline-date">
+          {{ formatDate(e.date) }}
+        </div>
         <div class="text-body-2 font-weight-medium">
           {{ store.isClinical ? e.clinicalLabel : e.patientLabel }}
-        </div>
-        <div class="text-caption text-medium-emphasis d-sm-none">
-          {{ formatDate(e.date) }}
         </div>
       </v-timeline-item>
     </v-timeline>
@@ -60,3 +56,15 @@ function meta(type) {
     />
   </div>
 </template>
+
+<style scoped>
+/* No opposite column, so each entry gets full row width for its date. */
+.php-timeline :deep(.v-timeline-item__opposite) {
+  display: none;
+}
+
+.php-timeline-date {
+  white-space: nowrap;
+}
+</style>
+

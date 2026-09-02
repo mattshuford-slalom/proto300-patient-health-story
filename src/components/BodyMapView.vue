@@ -26,10 +26,8 @@ const legend = [
           </p>
         </div>
 
-        <AnatomyMap />
-
-        <!-- Legend -->
-        <div class="d-flex justify-center flex-wrap ga-4 mt-3">
+        <!-- Legend (above the body) -->
+        <div class="d-flex justify-center flex-wrap ga-4 mb-3">
           <div
             v-for="l in legend"
             :key="l.key"
@@ -46,6 +44,8 @@ const legend = [
             </span>
           </div>
         </div>
+
+        <AnatomyMap />
       </v-col>
 
       <v-col cols="12" md="5" lg="4" class="px-md-4 mt-6 mt-md-0">
