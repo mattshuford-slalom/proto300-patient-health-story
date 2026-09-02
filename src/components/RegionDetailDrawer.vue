@@ -13,9 +13,10 @@ const { mdAndUp } = useDisplay()
 
 const region = computed(() => store.selectedRegion)
 const open = computed({
-  get: () => !!store.selectedRegionId,
+  get: () => store.drawerOpen,
   set: (v) => {
-    if (!v) store.clearSelection()
+    if (!v) store.closeDrawer()
+    else store.openDrawer()
   },
 })
 
@@ -58,7 +59,7 @@ const notes = computed(() =>
             variant="text"
             size="small"
             aria-label="Close region details"
-            @click="store.clearSelection()"
+            @click="store.closeDrawer()"
           />
         </div>
         <h2 class="text-h5 font-weight-bold php-patient-headline">
@@ -127,6 +128,33 @@ const notes = computed(() =>
         </template>
       </div>
     </template>
+
+    <!-- Welcome prompt shown before any region is selected -->
+    <template v-else>
+      <div class="php-welcome pa-6">
+        <v-btn
+          icon="mdi-close"
+          variant="text"
+          size="small"
+          aria-label="Close"
+          class="php-welcome-close"
+          @click="store.closeDrawer()"
+        />
+        <v-icon
+          icon="mdi-gesture-tap"
+          size="56"
+          color="primary"
+          class="mb-4"
+        />
+        <h2 class="text-h5 font-weight-bold php-patient-headline mb-2">
+          Explore your health story
+        </h2>
+        <p class="text-body-1 text-medium-emphasis">
+          Select any part of the body to see conditions, medications, and
+          recent labs and vitals for that area.
+        </p>
+      </div>
+    </template>
   </v-navigation-drawer>
 </template>
 
@@ -143,5 +171,21 @@ const notes = computed(() =>
 .php-drawer-scroll {
   overflow-y: auto;
   flex: 1 1 auto;
+}
+
+.php-welcome {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.php-welcome-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 </style>

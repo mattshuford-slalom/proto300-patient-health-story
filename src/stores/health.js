@@ -20,6 +20,8 @@ export const useHealthStore = defineStore('health', {
     timelineEvents,
     careNotes,
     selectedRegionId: null,
+    // Open by default so the drawer prompts the user to select a region.
+    drawerOpen: true,
     // 'patient' = plain language, 'clinical' = clinical language
     languageMode: 'patient',
     timelineOpen: false,
@@ -75,10 +77,17 @@ export const useHealthStore = defineStore('health', {
     selectRegion(regionId) {
       this.selectedRegionId = regionId
       this.timelineOpen = false
+      this.drawerOpen = true
     },
     clearSelection() {
       this.selectedRegionId = null
       this.timelineOpen = false
+    },
+    openDrawer() {
+      this.drawerOpen = true
+    },
+    closeDrawer() {
+      this.drawerOpen = false
     },
     toggleLanguageMode() {
       this.languageMode = this.isClinical ? 'patient' : 'clinical'

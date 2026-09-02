@@ -18,7 +18,7 @@ function toggleTheme() {
 
 // On md+ screens the drawer shifts content aside instead of overlaying it.
 const { mdAndUp } = useDisplay()
-const shiftContent = computed(() => mdAndUp.value && !!store.selectedRegionId)
+const shiftContent = computed(() => mdAndUp.value && store.drawerOpen)
 </script>
 
 <template>
