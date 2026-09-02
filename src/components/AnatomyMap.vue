@@ -8,9 +8,12 @@ const hoveredId = ref(null)
 
 const theme = useTheme()
 const isDark = computed(() => theme.global.current.value.dark)
-const silhouetteFill = computed(() => (isDark.value ? '#33403D' : '#DDE6E3'))
-const neutralFill = computed(() => (isDark.value ? '#3C4744' : '#C6D6D3'))
+const silhouetteFill = computed(() => (isDark.value ? '#33403D' : '#C4D1CC'))
+const silhouetteOpacity = computed(() => (isDark.value ? 0.35 : 0.5))
+const neutralFill = computed(() => (isDark.value ? '#3C4744' : '#9FB3AE'))
 const selectStroke = computed(() => (isDark.value ? '#5FB3AE' : '#3E8E8A'))
+// Subtle outline on every region so shapes read clearly against the light background.
+const regionOutline = computed(() => (isDark.value ? 'rgba(255,255,255,0.10)' : 'rgba(51,53,47,0.22)'))
 
 // Region geometry. Each region is drawn as an SVG <path> so we can loop
 // uniformly; `cx`/`cy` anchor the floating flag indicator for that region.
@@ -72,16 +75,23 @@ const shapes = [
   },
 ]
 
-const FILL = {
+// Flag colors are deepened in light mode for better contrast against the
+// light background; dark mode keeps the original softer palette.
+const FILL_LIGHT = {
+  attention: '#C97A3D',
+  watch: '#B36A4E',
+  stable: '#5C8F6B',
+}
+const FILL_DARK = {
   attention: '#D9A05B',
   watch: '#C98B6B',
   stable: '#7FA88A',
-  none: '#C6D6D3',
 }
+const activeFill = computed(() => (isDark.value ? FILL_DARK : FILL_LIGHT))
 
 function fillFor(id) {
   const flag = store.regionFlag(id)
-  return FILL[flag] || neutralFill.value
+  return activeFill.value[flag] || neutralFill.value
 }
 
 function isSelected(id) {
@@ -90,8 +100,8 @@ function isSelected(id) {
 
 function opacityFor(id) {
   if (isSelected(id)) return 1
-  if (hoveredId.value === id) return 0.95
-  return 0.82
+  if (hoveredId.value === id) return isDark.value ? 0.95 : 1
+  return isDark.value ? 0.82 : 0.95
 }
 
 function onSelect(id) {
@@ -126,7 +136,7 @@ function regionLabel(id) {
       preserveAspectRatio="xMidYMid meet"
     >
       <!-- Soft body silhouette behind the interactive regions -->
-      <g opacity="0.35">
+      <g :opacity="silhouetteOpacity">
         <path
           d="M160,14 C188,14 208,36 208,66 C208,88 196,104 180,112 C206,116 216,132 216,150 L232,246 C236,262 224,272 214,268 C208,266 205,260 204,254 L198,214 L202,300 C204,338 196,352 194,556 C194,570 186,578 178,578 C170,578 164,570 164,556 L160,392 L156,556 C156,570 150,578 142,578 C134,578 126,570 126,556 C124,352 116,338 118,300 L122,214 L116,254 C115,260 112,266 106,268 C96,272 84,262 88,246 L104,150 C104,132 114,116 140,112 C124,104 112,88 112,66 C112,36 132,14 160,14 Z"
           :fill="silhouetteFill"
@@ -140,8 +150,8 @@ function regionLabel(id) {
         :d="s.d"
         :fill="fillFor(s.id)"
         :fill-opacity="opacityFor(s.id)"
-        :stroke="selectStroke"
-        :stroke-width="isSelected(s.id) ? 3 : 0"
+        :stroke="isSelected(s.id) ? selectStroke : regionOutline"
+        :stroke-width="isSelected(s.id) ? 3 : 1"
         class="php-region"
         :class="{ 'php-region--selected': isSelected(s.id) }"
         tabindex="0"
@@ -165,7 +175,7 @@ function regionLabel(id) {
           :cx="s.cx"
           :cy="s.cy"
           r="9"
-          :fill="FILL[s.flag]"
+          :fill="activeFill[s.flag]"
           stroke="#FFFFFF"
           stroke-width="2.5"
         />
