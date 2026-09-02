@@ -1,0 +1,17 @@
+{
+  "id": "pt-10428",
+  "name": "Maya Ellison",
+  "preferredName": "Maya",
+  "dateOfBirth": "1981-04-17",
+  "age": 45,
+  "sex": "Female",
+  "mrn": "MRN-10428",
+  "primaryCareProvider": "Dr. Alan Whitfield",
+  "lastVisit": "2026-08-19",
+  "careTeam": [
+    { "name": "Dr. Alan Whitfield", "role": "Primary Care", "specialty": "Internal Medicine" },
+    { "name": "Dr. Priya Nandakumar", "role": "Cardiologist", "specialty": "Cardiovascular" },
+    { "name": "Dr. Lena Ortiz", "role": "Endocrinologist", "specialty": "Endocrinology" },
+    { "name": "James Okafor, RN", "role": "Care Coordinator", "specialty": "Nursing" }
+  ]
+}

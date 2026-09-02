@@ -1,0 +1,72 @@
+[
+  {
+    "id": "med-lisinopril",
+    "regionId": "chest",
+    "patientLabel": "Blood pressure pill",
+    "clinicalLabel": "Lisinopril 10mg",
+    "schedule": "Once daily, morning",
+    "purpose": "Helps lower blood pressure",
+    "clinicalPurpose": "ACE inhibitor for HTN + renal protection",
+    "since": "2021-06-10"
+  },
+  {
+    "id": "med-metoprolol",
+    "regionId": "chest",
+    "patientLabel": "Heart rhythm pill",
+    "clinicalLabel": "Metoprolol succinate 25mg",
+    "schedule": "Once daily",
+    "purpose": "Keeps your heartbeat steady",
+    "clinicalPurpose": "Beta-blocker for rate control (AF)",
+    "since": "2024-11-20"
+  },
+  {
+    "id": "med-metformin",
+    "regionId": "abdomen",
+    "patientLabel": "Blood sugar pill",
+    "clinicalLabel": "Metformin 500mg",
+    "schedule": "Twice daily with meals",
+    "purpose": "Helps manage blood sugar",
+    "clinicalPurpose": "First-line therapy for T2DM",
+    "since": "2020-03-01"
+  },
+  {
+    "id": "med-levothyroxine",
+    "regionId": "throat",
+    "patientLabel": "Thyroid pill",
+    "clinicalLabel": "Levothyroxine 75mcg",
+    "schedule": "Once daily, empty stomach",
+    "purpose": "Balances your thyroid",
+    "clinicalPurpose": "Thyroid hormone replacement",
+    "since": "2019-09-15"
+  },
+  {
+    "id": "med-sumatriptan",
+    "regionId": "head",
+    "patientLabel": "Migraine relief",
+    "clinicalLabel": "Sumatriptan 50mg",
+    "schedule": "As needed for migraine",
+    "purpose": "Eases migraine when it starts",
+    "clinicalPurpose": "Abortive triptan therapy",
+    "since": "2016-01-12"
+  },
+  {
+    "id": "med-albuterol",
+    "regionId": "lungs",
+    "patientLabel": "Rescue inhaler",
+    "clinicalLabel": "Albuterol HFA",
+    "schedule": "As needed for tightness",
+    "purpose": "Opens your airways quickly",
+    "clinicalPurpose": "Short-acting beta agonist, PRN",
+    "since": "2012-08-01"
+  },
+  {
+    "id": "med-emollient",
+    "regionId": "left-arm",
+    "patientLabel": "Moisturizing cream",
+    "clinicalLabel": "Emollient + PRN hydrocortisone 1%",
+    "schedule": "Daily, and during flares",
+    "purpose": "Soothes dry, itchy skin",
+    "clinicalPurpose": "Barrier repair + topical steroid PRN",
+    "since": "2018-05-01"
+  }
+]

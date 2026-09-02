@@ -1,0 +1,47 @@
+:root {
+  --php-headline-font: 'Nunito', 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+/* Rounded/humanist headline face for patient mode. */
+.php-patient-headline {
+  font-family: var(--php-headline-font);
+  letter-spacing: 0.2px;
+}
+
+.php-body-map {
+  transition: filter 200ms ease;
+}
+
+.php-region {
+  cursor: pointer;
+  transition: fill 250ms ease, opacity 200ms ease, stroke-width 200ms ease;
+}
+
+.php-region:hover {
+  opacity: 0.92;
+}
+
+.php-region:focus-visible {
+  outline: none;
+}
+
+.php-region--selected {
+  stroke-width: 3;
+}
+
+/* Custom scrollbar for the detail drawer, kept soft. */
+.php-drawer-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.php-drawer-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}

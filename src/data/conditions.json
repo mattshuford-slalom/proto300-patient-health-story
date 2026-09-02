@@ -1,0 +1,112 @@
+[
+  {
+    "id": "cond-htn",
+    "regionId": "chest",
+    "patientLabel": "High blood pressure",
+    "clinicalLabel": "Essential hypertension",
+    "status": "active",
+    "flag": "attention",
+    "onsetDate": "2021-06-02",
+    "patientNote": "Your blood pressure has been running a little high. We're keeping an eye on it.",
+    "clinicalNote": "Stage 1 HTN, managed with lifestyle + lisinopril. Trending toward goal."
+  },
+  {
+    "id": "cond-afib",
+    "regionId": "chest",
+    "patientLabel": "Occasional irregular heartbeat",
+    "clinicalLabel": "Paroxysmal atrial fibrillation",
+    "status": "monitoring",
+    "flag": "watch",
+    "onsetDate": "2024-11-15",
+    "patientNote": "Sometimes your heart skips a rhythm. It's being watched closely.",
+    "clinicalNote": "Paroxysmal AF, CHA2DS2-VASc = 2. Rate-controlled, anticoagulation under review."
+  },
+  {
+    "id": "cond-t2dm",
+    "regionId": "abdomen",
+    "patientLabel": "Type 2 diabetes",
+    "clinicalLabel": "Type 2 diabetes mellitus",
+    "status": "active",
+    "flag": "watch",
+    "onsetDate": "2020-02-20",
+    "patientNote": "Your body has trouble managing blood sugar. Diet and medication help.",
+    "clinicalNote": "T2DM, last A1c 7.1%. On metformin. Diet-responsive."
+  },
+  {
+    "id": "cond-hypothyroid",
+    "regionId": "throat",
+    "patientLabel": "Underactive thyroid",
+    "clinicalLabel": "Hypothyroidism",
+    "status": "stable",
+    "flag": "stable",
+    "onsetDate": "2019-09-10",
+    "patientNote": "Your thyroid runs a little slow, which a daily pill balances out.",
+    "clinicalNote": "Primary hypothyroidism, stable on levothyroxine 75mcg. TSH in range."
+  },
+  {
+    "id": "cond-migraine",
+    "regionId": "head",
+    "patientLabel": "Migraines",
+    "clinicalLabel": "Migraine without aura",
+    "status": "active",
+    "flag": "watch",
+    "onsetDate": "2015-03-01",
+    "patientNote": "You get migraines now and then. We have a plan to ease them.",
+    "clinicalNote": "Episodic migraine, ~3/month. Abortive sumatriptan. Trigger diary in place."
+  },
+  {
+    "id": "cond-myopia",
+    "regionId": "eyes",
+    "patientLabel": "Nearsightedness",
+    "clinicalLabel": "Myopia, bilateral",
+    "status": "stable",
+    "flag": "stable",
+    "onsetDate": "2005-01-01",
+    "patientNote": "Distance is a bit blurry — corrected with your glasses.",
+    "clinicalNote": "Stable bilateral myopia. Corrected -2.25 OD / -2.00 OS."
+  },
+  {
+    "id": "cond-asthma",
+    "regionId": "lungs",
+    "patientLabel": "Mild asthma",
+    "clinicalLabel": "Mild intermittent asthma",
+    "status": "stable",
+    "flag": "stable",
+    "onsetDate": "2012-07-14",
+    "patientNote": "Your lungs can get tight sometimes. An inhaler helps when needed.",
+    "clinicalNote": "Mild intermittent asthma. PRN albuterol, <2 uses/week."
+  },
+  {
+    "id": "cond-ckd",
+    "regionId": "pelvis",
+    "patientLabel": "Early kidney changes",
+    "clinicalLabel": "Chronic kidney disease, stage 2",
+    "status": "monitoring",
+    "flag": "attention",
+    "onsetDate": "2023-05-30",
+    "patientNote": "Your kidneys are working a bit harder than ideal. We check them regularly.",
+    "clinicalNote": "CKD stage 2 (eGFR 74), likely diabetic. Monitor ACR, avoid nephrotoxins."
+  },
+  {
+    "id": "cond-knee",
+    "regionId": "left-leg",
+    "patientLabel": "Knee arthritis",
+    "clinicalLabel": "Osteoarthritis, left knee",
+    "status": "active",
+    "flag": "watch",
+    "onsetDate": "2022-10-05",
+    "patientNote": "Your left knee gets stiff and sore, especially in the morning.",
+    "clinicalNote": "Left knee OA, mild-moderate. PT + PRN NSAIDs. Weight-bearing preserved."
+  },
+  {
+    "id": "cond-eczema",
+    "regionId": "left-arm",
+    "patientLabel": "Dry, itchy skin patches",
+    "clinicalLabel": "Atopic dermatitis",
+    "status": "stable",
+    "flag": "stable",
+    "onsetDate": "2018-04-22",
+    "patientNote": "You get dry, itchy patches now and then. Moisturizer keeps it calm.",
+    "clinicalNote": "Atopic dermatitis, flexural. Emollients + PRN topical steroid."
+  }
+]

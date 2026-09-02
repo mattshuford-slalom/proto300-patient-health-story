@@ -1,0 +1,110 @@
+[
+  {
+    "id": "v-bp",
+    "regionId": "chest",
+    "type": "vital",
+    "metric": "Blood pressure",
+    "value": "132/84",
+    "unit": "mmHg",
+    "date": "2026-08-19",
+    "normalRange": "< 120/80",
+    "status": "high",
+    "patientHint": "A little above the healthy range."
+  },
+  {
+    "id": "v-hr",
+    "regionId": "chest",
+    "type": "vital",
+    "metric": "Resting heart rate",
+    "value": "78",
+    "unit": "bpm",
+    "date": "2026-08-19",
+    "normalRange": "60–100",
+    "status": "normal",
+    "patientHint": "Right where it should be."
+  },
+  {
+    "id": "l-a1c",
+    "regionId": "abdomen",
+    "type": "lab",
+    "metric": "HbA1c",
+    "value": "7.1",
+    "unit": "%",
+    "date": "2026-07-30",
+    "normalRange": "< 7.0",
+    "status": "high",
+    "patientHint": "Just above target — close to goal."
+  },
+  {
+    "id": "l-glucose",
+    "regionId": "abdomen",
+    "type": "lab",
+    "metric": "Fasting glucose",
+    "value": "128",
+    "unit": "mg/dL",
+    "date": "2026-07-30",
+    "normalRange": "70–100",
+    "status": "high",
+    "patientHint": "A bit elevated in the morning."
+  },
+  {
+    "id": "l-tsh",
+    "regionId": "throat",
+    "type": "lab",
+    "metric": "TSH",
+    "value": "2.4",
+    "unit": "mIU/L",
+    "date": "2026-06-11",
+    "normalRange": "0.4–4.0",
+    "status": "normal",
+    "patientHint": "Thyroid is well balanced."
+  },
+  {
+    "id": "l-egfr",
+    "regionId": "pelvis",
+    "type": "lab",
+    "metric": "eGFR",
+    "value": "74",
+    "unit": "mL/min",
+    "date": "2026-07-30",
+    "normalRange": "> 90",
+    "status": "low",
+    "patientHint": "Kidneys filtering a little slower than ideal."
+  },
+  {
+    "id": "l-acr",
+    "regionId": "pelvis",
+    "type": "lab",
+    "metric": "Urine ACR",
+    "value": "22",
+    "unit": "mg/g",
+    "date": "2026-07-30",
+    "normalRange": "< 30",
+    "status": "normal",
+    "patientHint": "Within the healthy range."
+  },
+  {
+    "id": "v-spo2",
+    "regionId": "lungs",
+    "type": "vital",
+    "metric": "Oxygen saturation",
+    "value": "98",
+    "unit": "%",
+    "date": "2026-08-19",
+    "normalRange": "95–100",
+    "status": "normal",
+    "patientHint": "Your lungs are oxygenating well."
+  },
+  {
+    "id": "v-peak",
+    "regionId": "lungs",
+    "type": "vital",
+    "metric": "Peak flow",
+    "value": "410",
+    "unit": "L/min",
+    "date": "2026-08-19",
+    "normalRange": "400–550",
+    "status": "normal",
+    "patientHint": "Airways are open and clear."
+  }
+]

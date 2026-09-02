@@ -1,0 +1,90 @@
+[
+  {
+    "id": "head",
+    "label": "Head & Neurological",
+    "shortLabel": "Head",
+    "system": "Neurological",
+    "patientBlurb": "Your brain, headaches, sleep, and mood.",
+    "clinicalBlurb": "Neurological and cognitive systems."
+  },
+  {
+    "id": "eyes",
+    "label": "Eyes & Vision",
+    "shortLabel": "Eyes",
+    "system": "Ophthalmic",
+    "patientBlurb": "Your eyesight and eye health.",
+    "clinicalBlurb": "Ophthalmic system and visual acuity."
+  },
+  {
+    "id": "throat",
+    "label": "Throat & Thyroid",
+    "shortLabel": "Thyroid",
+    "system": "Endocrine",
+    "patientBlurb": "Your thyroid, which helps control energy.",
+    "clinicalBlurb": "Thyroid and upper endocrine function."
+  },
+  {
+    "id": "chest",
+    "label": "Heart & Cardiovascular",
+    "shortLabel": "Heart",
+    "system": "Cardiovascular",
+    "patientBlurb": "Your heart and blood pressure.",
+    "clinicalBlurb": "Cardiovascular system and hemodynamics."
+  },
+  {
+    "id": "lungs",
+    "label": "Lungs & Respiratory",
+    "shortLabel": "Lungs",
+    "system": "Respiratory",
+    "patientBlurb": "Your breathing and lungs.",
+    "clinicalBlurb": "Respiratory system and pulmonary function."
+  },
+  {
+    "id": "abdomen",
+    "label": "Abdomen & Digestive",
+    "shortLabel": "Abdomen",
+    "system": "Gastrointestinal",
+    "patientBlurb": "Your stomach, gut, and digestion.",
+    "clinicalBlurb": "Gastrointestinal and metabolic systems."
+  },
+  {
+    "id": "pelvis",
+    "label": "Kidneys & Urinary",
+    "shortLabel": "Kidneys",
+    "system": "Renal",
+    "patientBlurb": "Your kidneys and how your body filters fluids.",
+    "clinicalBlurb": "Renal and genitourinary systems."
+  },
+  {
+    "id": "left-arm",
+    "label": "Left Arm & Skin",
+    "shortLabel": "L. Arm",
+    "system": "Musculoskeletal",
+    "patientBlurb": "Your left arm, joints, and skin.",
+    "clinicalBlurb": "Upper-left musculoskeletal and integumentary."
+  },
+  {
+    "id": "right-arm",
+    "label": "Right Arm & Circulation",
+    "shortLabel": "R. Arm",
+    "system": "Vascular",
+    "patientBlurb": "Your right arm and blood flow.",
+    "clinicalBlurb": "Upper-right musculoskeletal and vascular."
+  },
+  {
+    "id": "left-leg",
+    "label": "Left Leg & Joints",
+    "shortLabel": "L. Leg",
+    "system": "Musculoskeletal",
+    "patientBlurb": "Your left leg, knee, and joints.",
+    "clinicalBlurb": "Lower-left musculoskeletal system."
+  },
+  {
+    "id": "right-leg",
+    "label": "Right Leg & Circulation",
+    "shortLabel": "R. Leg",
+    "system": "Vascular",
+    "patientBlurb": "Your right leg and blood flow.",
+    "clinicalBlurb": "Lower-right musculoskeletal and vascular."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  { "id": "t-chest-1", "regionId": "chest", "date": "2021-06-02", "eventType": "diagnosis", "patientLabel": "High blood pressure first noticed", "clinicalLabel": "Dx: Essential hypertension" },
+  { "id": "t-chest-2", "regionId": "chest", "date": "2021-06-10", "eventType": "medication", "patientLabel": "Started blood pressure pill", "clinicalLabel": "Initiated lisinopril 10mg" },
+  { "id": "t-chest-3", "regionId": "chest", "date": "2024-11-15", "eventType": "diagnosis", "patientLabel": "Irregular heartbeat detected", "clinicalLabel": "Dx: Paroxysmal AF" },
+  { "id": "t-chest-4", "regionId": "chest", "date": "2024-11-20", "eventType": "medication", "patientLabel": "Started heart rhythm pill", "clinicalLabel": "Initiated metoprolol 25mg" },
+  { "id": "t-chest-5", "regionId": "chest", "date": "2026-08-19", "eventType": "reading", "patientLabel": "Blood pressure 132/84", "clinicalLabel": "BP 132/84 mmHg, trending down" },
+
+  { "id": "t-abd-1", "regionId": "abdomen", "date": "2020-02-20", "eventType": "diagnosis", "patientLabel": "Type 2 diabetes diagnosed", "clinicalLabel": "Dx: T2DM" },
+  { "id": "t-abd-2", "regionId": "abdomen", "date": "2020-03-01", "eventType": "medication", "patientLabel": "Started blood sugar pill", "clinicalLabel": "Initiated metformin 500mg" },
+  { "id": "t-abd-3", "regionId": "abdomen", "date": "2023-01-14", "eventType": "reading", "patientLabel": "A1c improved to 6.8%", "clinicalLabel": "A1c 6.8% (at goal)" },
+  { "id": "t-abd-4", "regionId": "abdomen", "date": "2026-07-30", "eventType": "reading", "patientLabel": "A1c 7.1% — close to target", "clinicalLabel": "A1c 7.1%, slight rise" },
+
+  { "id": "t-throat-1", "regionId": "throat", "date": "2019-09-10", "eventType": "diagnosis", "patientLabel": "Underactive thyroid found", "clinicalLabel": "Dx: Hypothyroidism" },
+  { "id": "t-throat-2", "regionId": "throat", "date": "2019-09-15", "eventType": "medication", "patientLabel": "Started thyroid pill", "clinicalLabel": "Initiated levothyroxine 75mcg" },
+  { "id": "t-throat-3", "regionId": "throat", "date": "2026-06-11", "eventType": "reading", "patientLabel": "Thyroid level normal", "clinicalLabel": "TSH 2.4 mIU/L (in range)" },
+
+  { "id": "t-head-1", "regionId": "head", "date": "2015-03-01", "eventType": "diagnosis", "patientLabel": "Migraines began", "clinicalLabel": "Dx: Migraine without aura" },
+  { "id": "t-head-2", "regionId": "head", "date": "2016-01-12", "eventType": "medication", "patientLabel": "Started migraine relief", "clinicalLabel": "Initiated sumatriptan PRN" },
+  { "id": "t-head-3", "regionId": "head", "date": "2026-05-02", "eventType": "note", "patientLabel": "Trigger diary started", "clinicalLabel": "Headache diary initiated" },
+
+  { "id": "t-pelvis-1", "regionId": "pelvis", "date": "2023-05-30", "eventType": "diagnosis", "patientLabel": "Early kidney changes noted", "clinicalLabel": "Dx: CKD stage 2" },
+  { "id": "t-pelvis-2", "regionId": "pelvis", "date": "2026-07-30", "eventType": "reading", "patientLabel": "Kidney function stable", "clinicalLabel": "eGFR 74, ACR 22 — stable" },
+
+  { "id": "t-lleg-1", "regionId": "left-leg", "date": "2022-10-05", "eventType": "diagnosis", "patientLabel": "Knee arthritis diagnosed", "clinicalLabel": "Dx: Left knee OA" },
+  { "id": "t-lleg-2", "regionId": "left-leg", "date": "2023-02-01", "eventType": "note", "patientLabel": "Started physical therapy", "clinicalLabel": "PT referral for knee OA" },
+
+  { "id": "t-lungs-1", "regionId": "lungs", "date": "2012-07-14", "eventType": "diagnosis", "patientLabel": "Mild asthma diagnosed", "clinicalLabel": "Dx: Mild intermittent asthma" },
+  { "id": "t-lungs-2", "regionId": "lungs", "date": "2026-08-19", "eventType": "reading", "patientLabel": "Breathing tests normal", "clinicalLabel": "SpO2 98%, peak flow 410" },
+
+  { "id": "t-larm-1", "regionId": "left-arm", "date": "2018-04-22", "eventType": "diagnosis", "patientLabel": "Itchy skin patches diagnosed", "clinicalLabel": "Dx: Atopic dermatitis" },
+  { "id": "t-eyes-1", "regionId": "eyes", "date": "2005-01-01", "eventType": "diagnosis", "patientLabel": "Nearsightedness identified", "clinicalLabel": "Dx: Bilateral myopia" }
+]

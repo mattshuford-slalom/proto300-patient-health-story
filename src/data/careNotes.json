@@ -1,0 +1,29 @@
+[
+  {
+    "id": "note-chest-1",
+    "regionId": "chest",
+    "author": "Dr. Priya Nandakumar",
+    "role": "Cardiologist",
+    "date": "2026-08-19",
+    "patientLabel": "Let's recheck your blood pressure in 6 weeks. Keep up the evening walks — they're helping.",
+    "clinicalLabel": "Recheck BP in 6 weeks. Continue lifestyle mod. Reassess anticoagulation for AF."
+  },
+  {
+    "id": "note-abdomen-1",
+    "regionId": "abdomen",
+    "author": "Dr. Lena Ortiz",
+    "role": "Endocrinologist",
+    "date": "2026-07-30",
+    "patientLabel": "Your numbers are close to goal. A small tweak to meals could get you there.",
+    "clinicalLabel": "A1c 7.1%. Reinforce dietary carb consistency before escalating pharmacotherapy."
+  },
+  {
+    "id": "note-pelvis-1",
+    "regionId": "pelvis",
+    "author": "Dr. Alan Whitfield",
+    "role": "Primary Care",
+    "date": "2026-07-30",
+    "patientLabel": "Your kidneys are steady. Staying hydrated and on top of blood pressure protects them.",
+    "clinicalLabel": "CKD2 stable. Continue ACEi, monitor ACR q6mo, avoid NSAIDs where possible."
+  }
+]
