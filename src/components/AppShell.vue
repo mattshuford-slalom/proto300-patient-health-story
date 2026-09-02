@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { useTheme } from 'vuetify'
+import { useTheme, useDisplay } from 'vuetify'
 import { useHealthStore } from '../stores/health'
 import { formatDate } from '../utils/flags'
 import ModeToggle from './ModeToggle.vue'
@@ -15,6 +15,10 @@ const isDark = computed(() => theme.global.current.value.dark)
 function toggleTheme() {
   theme.change(isDark.value ? 'patientHealthLight' : 'patientHealthDark')
 }
+
+// On md+ screens the drawer shifts content aside instead of overlaying it.
+const { mdAndUp } = useDisplay()
+const shiftContent = computed(() => mdAndUp.value && !!store.selectedRegionId)
 </script>
 
 <template>
@@ -68,7 +72,9 @@ function toggleTheme() {
     </v-sheet>
 
     <v-main class="php-main">
-      <BodyMapView />
+      <div class="php-content" :class="{ 'php-content--shifted': shiftContent }">
+        <BodyMapView />
+      </div>
       <RegionDetailDrawer />
     </v-main>
 
@@ -111,5 +117,13 @@ function toggleTheme() {
   background:
     radial-gradient(1200px 600px at 50% -10%, rgba(62, 142, 138, 0.06), transparent),
     rgb(var(--v-theme-background));
+}
+
+.php-content {
+  transition: margin-right 240ms ease;
+}
+
+.php-content--shifted {
+  margin-right: 440px;
 }
 </style>

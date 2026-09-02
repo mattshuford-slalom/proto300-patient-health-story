@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { useDisplay } from 'vuetify'
 import { useHealthStore } from '../stores/health'
 import { flagMeta, flagLabel, formatDate } from '../utils/flags'
 import ConditionList from './ConditionList.vue'
@@ -8,6 +9,7 @@ import VitalsLabsSnapshot from './VitalsLabsSnapshot.vue'
 import RegionTimeline from './RegionTimeline.vue'
 
 const store = useHealthStore()
+const { mdAndUp } = useDisplay()
 
 const region = computed(() => store.selectedRegion)
 const open = computed({
@@ -32,7 +34,7 @@ const notes = computed(() =>
     :width="440"
     temporary
     class="php-detail-drawer"
-    scrim="rgba(51,53,47,0.25)"
+    :scrim="mdAndUp ? false : 'rgba(51,53,47,0.25)'"
   >
     <template v-if="region">
       <!-- Header -->

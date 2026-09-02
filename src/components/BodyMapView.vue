@@ -2,7 +2,6 @@
 import { useHealthStore } from '../stores/health'
 import { flagMeta } from '../utils/flags'
 import AnatomyMap from './AnatomyMap.vue'
-import RegionSummaryChips from './RegionSummaryChips.vue'
 
 const store = useHealthStore()
 
@@ -15,40 +14,18 @@ const legend = [
 
 <template>
   <div class="php-map-view">
-    <v-row align="center" no-gutters>
-      <v-col cols="12" md="7" lg="8" class="px-md-6">
-        <div class="text-center mb-2">
-          <h1 class="text-h4 font-weight-bold php-patient-headline mb-1">
-            Your health, head to toe
-          </h1>
-          <p class="text-body-1 text-medium-emphasis">
-            Select any part of the body to explore what's going on there.
-          </p>
-        </div>
+    <div class="text-center mb-4">
+      <h1 class="text-h4 font-weight-bold php-patient-headline mb-1">
+        Your health, head to toe
+      </h1>
+      <p class="text-body-1 text-medium-emphasis">
+        Select any part of the body to explore what's going on there.
+      </p>
+    </div>
 
-        <!-- Legend (above the body) -->
-        <div class="d-flex justify-center flex-wrap ga-4 mb-3">
-          <div
-            v-for="l in legend"
-            :key="l.key"
-            class="d-flex align-center ga-2"
-          >
-            <v-icon
-              :icon="flagMeta(l.flag)?.icon"
-              :color="flagMeta(l.flag)?.color"
-              size="18"
-            />
-            <span class="text-caption text-medium-emphasis">
-              {{ store.isClinical ? flagMeta(l.flag)?.clinicalLabel : flagMeta(l.flag)?.patientLabel }}
-              ({{ store.flagSummary[l.key] }})
-            </span>
-          </div>
-        </div>
-
-        <AnatomyMap />
-      </v-col>
-
-      <v-col cols="12" md="5" lg="4" class="px-md-4 mt-6 mt-md-0">
+    <!-- "At a glance" + body map are treated as one unit, centered together -->
+    <div class="php-content-row">
+      <div class="php-glance-col">
         <v-card variant="tonal" color="surface-variant" class="pa-4 mb-4">
           <div class="text-overline text-medium-emphasis">At a glance</div>
           <p class="text-body-2 mb-3">
@@ -67,9 +44,30 @@ const legend = [
           />
         </v-card>
 
-        <RegionSummaryChips />
-      </v-col>
-    </v-row>
+        <!-- Legend, stacked vertically -->
+        <div class="d-flex flex-column ga-3">
+          <div
+            v-for="l in legend"
+            :key="l.key"
+            class="d-flex align-center ga-2"
+          >
+            <v-icon
+              :icon="flagMeta(l.flag)?.icon"
+              :color="flagMeta(l.flag)?.color"
+              size="18"
+            />
+            <span class="text-caption text-medium-emphasis">
+              {{ store.isClinical ? flagMeta(l.flag)?.clinicalLabel : flagMeta(l.flag)?.patientLabel }}
+              ({{ store.flagSummary[l.key] }})
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="php-map-col">
+        <AnatomyMap />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -78,5 +76,25 @@ const legend = [
   max-width: 1280px;
   margin: 0 auto;
   padding: 24px 16px 48px;
+}
+
+.php-content-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.php-glance-col {
+  width: 320px;
+  max-width: 100%;
+  /* Lines up with the shoulders in AnatomyMap's SVG. */
+  margin-top: 194px;
+}
+
+.php-map-col {
+  width: 460px;
+  max-width: 100%;
 }
 </style>
