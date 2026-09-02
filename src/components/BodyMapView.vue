@@ -37,6 +37,8 @@ import AtAGlancePanel from './AtAGlancePanel.vue'
 .php-left-panel {
   flex: 0 0 380px;
   align-self: flex-start;
+  /* Lines up with the head of the body, below the headline block. */
+  margin-top: 84px;
 }
 
 .php-right-section {
