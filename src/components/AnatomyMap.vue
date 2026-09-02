@@ -186,13 +186,18 @@ function regionLabel(id) {
 .php-map-wrap {
   position: relative;
   width: 100%;
+  height: 100%;
   max-width: 460px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .php-body-map {
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
   display: block;
   filter: drop-shadow(0 8px 24px rgba(62, 142, 138, 0.12));
 }

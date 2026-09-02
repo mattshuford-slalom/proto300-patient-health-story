@@ -114,12 +114,15 @@ const shiftContent = computed(() => mdAndUp.value && !!store.selectedRegionId)
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 .php-main {
+  height: calc(100vh - 72px);
+  overflow: hidden;
   background:
     radial-gradient(1200px 600px at 50% -10%, rgba(62, 142, 138, 0.06), transparent),
     rgb(var(--v-theme-background));
 }
 
 .php-content {
+  height: 100%;
   transition: margin-right 240ms ease;
 }
 
